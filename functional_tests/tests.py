@@ -10,7 +10,6 @@ class NewVisitorTest(StaticLiveServerTestCase):
         self.browser.implicitly_wait(3)
 
     def tearDown(self):
-        self.browser.refresh()
         self.browser.quit()
 
     def check_for_row_in_list_table(self, row_text):
@@ -102,5 +101,5 @@ class NewVisitorTest(StaticLiveServerTestCase):
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
-            delta=5
+            delta=10
         )
